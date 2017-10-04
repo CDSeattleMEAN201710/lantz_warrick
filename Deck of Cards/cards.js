@@ -32,7 +32,7 @@ function Deck(){
     this.reset = () => {
         this.cards = [];
     }
-    this.reset();
+    // this.reset();
 }
 
 let my_deck = new Deck()
