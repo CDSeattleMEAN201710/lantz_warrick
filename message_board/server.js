@@ -26,10 +26,10 @@ const MessageSchema = new mongoose.Schema({
     comments: [CommentSchema]  //using embedded document rather than schema assn.
 }, {timestamps: true})
 
-mongoose.model('Message', MessageSchema)
-mongoose.model('Comment', CommentSchema)
+mongoose.model('Message', MessageSchema) //l. 29, 31 can be combined by including MessageSchema in the args
+// mongoose.model('Comment', CommentSchema) //with embedded document, don't need to set up another collction/model
 const Message = mongoose.model("Message")
-const Comment = mongoose.model('Comment')
+// const Comment = mongoose.model('Comment')
 
 app.get('/', function(req, res) {
     Message.find({}, (err, messages) => {
@@ -56,7 +56,7 @@ app.post('/message', (req, res) => {
     })
 })
 app.post('/comment', (req, res)=> {
-    // let new_comment = new Comment({
+    // let new_comment = new Comment({  //not working because there is no Comment model
     //     name: req.body.name,
     //     comment: req.body.comment
     // })
