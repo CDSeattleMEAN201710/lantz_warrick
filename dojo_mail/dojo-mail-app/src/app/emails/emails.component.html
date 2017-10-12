@@ -7,8 +7,8 @@
   </tr>
   <tr class='row' *ngFor="let email of emails">
     <td>{{ email.email }}</td>
-    <td *ngIf='importance'>High</td>
-    <td *ngIf='!importance'>Low</td>
+    <td *ngIf='email.importance'>High</td>
+    <td *ngIf='!email.importance'>Low</td>
     <td>{{ email.subject }}</td>
     <td>{{ email.content }}</td>
   </tr>
