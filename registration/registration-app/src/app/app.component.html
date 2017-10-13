@@ -76,7 +76,7 @@
       #lastName='ngModel'
       />
     </div>
-    <!-- <div
+    <div
     class="alert alert-danger"
     *ngIf="lastName.touched && !lastName.valid">
       <div *ngIf="lastName.errors.required">
@@ -85,7 +85,7 @@
       <div *ngIf="lastName.errors.minlength">
         Last name should be minimum {{lastName.errors.minlength.requiredLength}} characters.
       </div>
-    </div> -->
+    </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input 
@@ -101,7 +101,7 @@
       #password='ngModel'
       />
     </div>
-    <!-- <div
+    <div
     class="alert alert-danger"
     *ngIf="password.touched && !password.valid">
       <div *ngIf="password.errors.required">
@@ -113,7 +113,7 @@
       <div *ngIf="password.errors.pattern">
         Passwords may use the characters a-z, A-Z, and symbols @, *, #.
       </div>
-    </div> -->
+    </div>
     <div class="form-group">
       <label for="passConfirm">Password confirmation</label>
       <input 
@@ -126,16 +126,17 @@
       #passConfirm='ngModel'
       />
     </div>
-  <!-- <div
+  <div
     class="alert alert-danger"
-    *ngIf="password.touched && !password.valid">
-    <div *ngIf="password.errors.required">
-      Password is required.
+    *ngIf="passConfirm.touched && user.passConfirm != user.password">
+    <!-- <div *ngIf="passConfirm.errors.required">
+      Please re-enter your password.
     </div>
-    <div *ngIf="password.errors.pattern">
+    <div *ngIf="user.passConfirm != user.password"> -->
       Passwords do not match.
-    </div>
-  </div> -->
+    <!-- </div> -->
+    
+  </div>
     <div class="form-group">
       <label for="address">Street address</label>
       <input 
@@ -147,6 +148,13 @@
       [(ngModel)]="user.address"
       #address='ngModel'
       />
+    </div>
+    <div
+    class="alert alert-danger"
+    *ngIf="address.touched && !address.valid">
+      <div *ngIf="address.errors.required">
+        Address is required.
+      </div>
     </div>
     <div class="form-group">
       <label for="apt">Unit/Apt #</label>
@@ -170,6 +178,13 @@
       [(ngModel)]="user.city"
       #city='ngModel'
       />
+    </div>
+    <div
+    class="alert alert-danger"
+    *ngIf="city.touched && !city.valid">
+      <div *ngIf="city.errors.required">
+        City is required.
+      </div>
     </div>
     <div class="form-group">
     <label for="state">State</label>
@@ -259,9 +274,16 @@
             </label>
         </div>
     </div>
-    <input [disabled]='!formData.valid' class="btn btn-primary" type="submit">
+    <div
+    class="alert alert-danger"
+    *ngIf="lucky.touched && !lucky.valid">
+      <div *ngIf="lucky.errors.required">
+        Please indicate your luckiness.
+      </div>
+    </div>
+    <input [disabled]='!formData.valid || user.passConfirm != user.password' class="btn btn-primary" type="submit">
   </form>
-  <!-- {{ user | json }}
-  {{ email.errors | json }}
+  <!-- {{ user | json }} -->
+  <!-- {{ email.errors | json }}
   {{ email.valid | json }} -->
 </div>
