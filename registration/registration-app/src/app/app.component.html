@@ -3,13 +3,14 @@
     <h2>Registration Demo</h2>
     <h3>with Angular & Bootstrap</h3>
   </div>
-  <!-- <div class="panel panel-primary">
-    <div class="panel-heading">Register</div>
+  <h3 >{{ result }}</h3>
+  <div class="panel panel-primary" *ngIf="users.length > 0">
+    <div class="panel-heading">Success</div>
     <div class="panel-body">
-      <h3>{{title}}</h3>
+      <h4 *ngFor="let x of users" style="color: green">{{ x.result }}</h4>
     </div>
-  </div> -->
-  <form (submit)="onSubmit()" #formData='ngForm'>
+  </div>
+  <form (submit)="onSubmit(formData);formData.reset()" #formData='ngForm'>
     <div class="form-group">
       <label for="email">Email</label>
       <input 
@@ -286,4 +287,5 @@
   <!-- {{ user | json }} -->
   <!-- {{ email.errors | json }}
   {{ email.valid | json }} -->
+<p *ngFor='let user of users'>{{user | json}}</p>
 </div>

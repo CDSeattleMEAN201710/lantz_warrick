@@ -10,6 +10,7 @@ export class User {
         public city: string = "",
         public state: string = "",
         public lucky: string = null,
+        public result: string = null,
         public created_at: Date = new Date(),
         public updated_at: Date = new Date()
       ){}
