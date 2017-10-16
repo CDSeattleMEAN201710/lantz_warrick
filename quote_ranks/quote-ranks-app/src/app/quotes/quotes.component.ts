@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Quote } from './quote'
+
 
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
-  styleUrls: ['./quotes.component.css']
+  styleUrls: ['./quotes.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuotesComponent implements OnInit {
   quotes: Array<Quote>
