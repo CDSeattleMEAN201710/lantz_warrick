@@ -1,4 +1,4 @@
-<form (submit)="create_quote()" #new_quote_form='ngForm'>
+<form (submit)="create_quote(new_quote_form);new_quote_form.reset()" #new_quote_form='ngForm'>
   <div class='form-group'>
     <textarea
     required

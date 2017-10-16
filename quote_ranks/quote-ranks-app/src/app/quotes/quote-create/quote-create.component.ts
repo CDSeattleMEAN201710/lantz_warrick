@@ -15,9 +15,10 @@ export class QuoteCreateComponent implements OnInit {
     this.new_quote = new Quote
   }
 
-  create_quote() {
+  create_quote(formController) {
     console.log(this.new_quote);
     this.add_quote.emit(this.new_quote)
     this.new_quote = new Quote
+    formController.form.reset()
   }
 }

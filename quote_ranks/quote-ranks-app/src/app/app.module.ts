@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { QuoteCreateComponent } from './quotes/quote-create/quote-create.component';
 import { QuoteListComponent } from './quotes/quote-list/quote-list.component';
+import { SortPipe } from './quotes/sort.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuotesComponent,
     QuoteCreateComponent,
-    QuoteListComponent
+    QuoteListComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
