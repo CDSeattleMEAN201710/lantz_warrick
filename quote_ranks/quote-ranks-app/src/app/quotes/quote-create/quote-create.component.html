@@ -1,3 +1,45 @@
-<p>
-  quote-create works!
-</p>
+<form (submit)="create_quote()" #new_quote_form='ngForm'>
+  <div class='form-group'>
+    <textarea
+    required
+    minlength='4'
+    name='quoteText'
+    class="form-control"
+    rows='4'
+    [(ngModel)]='new_quote.quoteText'
+    #quoteText='ngModel'
+    placeholder="Enter fav quotation..."></textarea>
+  </div>
+  <div class='alert alert-danger'
+    *ngIf='quoteText.touched && !quoteText.valid'>
+    <div *ngIf='quoteText.errors?.required'>
+      A quote is required.
+    </div>
+    <div *ngIf="quoteText.errors?.minlength">
+      Quote should be minimum {{quoteText.errors.minlength.requiredLength}} characters.
+    </div>
+  </div>
+  <div class="form-group"> 
+    <input 
+      required 
+      minlength="1" 
+      type="text" 
+      name="author" 
+      class="form-control"
+      [(ngModel)]="new_quote.author"
+      #author='ngModel'
+      placeholder="Who wrote that quote?"
+    />
+  </div>
+  <div
+    class="alert alert-danger"
+    *ngIf="author.touched && !author.valid">
+    <div *ngIf="author.errors.required">
+      Author is required.
+    </div>
+    <div *ngIf="author.errors.minlength">
+      Author should be minimum {{author.errors.minlength.requiredLength}} characters.
+    </div>
+  </div>
+  <input [disabled]='!new_quote_form.valid' class="btn btn-primary" type="submit">
+</form>

@@ -1,5 +1,5 @@
 export class Quote {
-    quote: string
+    quoteText: string
     author: string
-    rating: number
+    rating: number = 0
 }

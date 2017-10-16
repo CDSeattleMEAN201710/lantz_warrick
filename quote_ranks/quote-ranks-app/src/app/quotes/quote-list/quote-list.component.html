@@ -1,3 +1,11 @@
-<p>
-  quote-list works!
-</p>
+<div class="card border-primary mb-3">
+    <div class="card-header">
+      Quote Rank: {{ this_quote.rating }}
+    </div>
+    <div class="card-body text-primary">
+      <blockquote class="blockquote mb-0">
+        <p>{{ this_quote.quoteText }}</p>
+        <footer class="blockquote-footer">{{ this_quote.author }}</footer>
+      </blockquote>
+    </div>
+  </div>
