@@ -11,6 +11,7 @@ export class QuoteListComponent implements OnInit {
   @Input() this_quote: Quote
   @Output() upRank = new EventEmitter()
   @Output() downRank = new EventEmitter()
+  @Output() destroyOne = new EventEmitter()
   constructor() { }
 
   ngOnInit() {
@@ -21,5 +22,8 @@ export class QuoteListComponent implements OnInit {
   }
   downVote(idx) {
     this.downRank.emit(idx)
+  }
+  removeOne(idx) {
+    this.destroyOne.emit(idx)
   }
 }

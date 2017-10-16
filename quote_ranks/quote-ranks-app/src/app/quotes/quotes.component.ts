@@ -26,4 +26,7 @@ export class QuotesComponent implements OnInit {
   downRating(idx) {
     this.quotes[idx].rating -= 1
   }
+  deleteOne(idx) {
+    this.quotes.splice(idx, 1)
+  }
 }
