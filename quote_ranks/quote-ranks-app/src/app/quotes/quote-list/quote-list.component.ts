@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quote } from './../quote'
 
 @Component({
@@ -7,11 +7,19 @@ import { Quote } from './../quote'
   styleUrls: ['./quote-list.component.css']
 })
 export class QuoteListComponent implements OnInit {
+  new_rank: number
   @Input() this_quote: Quote
-
+  @Output() upRank = new EventEmitter()
+  @Output() downRank = new EventEmitter()
   constructor() { }
 
   ngOnInit() {
   }
 
+  upVote(idx) {
+    this.upRank.emit(idx)
+  }
+  downVote(idx) {
+    this.downRank.emit(idx)
+  }
 }

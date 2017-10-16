@@ -3,9 +3,20 @@
       Quote Rank: {{ this_quote.rating }}
     </div>
     <div class="card-body text-primary">
-      <blockquote class="blockquote mb-0">
-        <p>{{ this_quote.quoteText }}</p>
-        <footer class="blockquote-footer">{{ this_quote.author }}</footer>
-      </blockquote>
+    <div class='row'>
+      <div class='col'>
+          <blockquote class="blockquote mb-0">
+            <p>{{ this_quote.quoteText }}</p>
+            <footer class="blockquote-footer">{{ this_quote.author }}</footer>
+          </blockquote>
+        </div>
+      <div class='col-3'>
+          <div class="btn-group-vertical text-right" role="group">
+              <button (click)='upVote(idx)' type="button" class="btn btn-success">Vote Up</button>
+              <button (click)='downVote(idx)' type="button" class="btn btn-danger">Vote Down</button>
+              <button type="button" class="btn btn-secondary">Delete</button>
+          </div>
+      </div>
+        </div>
     </div>
   </div>

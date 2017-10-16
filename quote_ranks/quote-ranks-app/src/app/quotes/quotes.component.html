@@ -3,6 +3,5 @@
     <h2 class="display-3">Quotez</h2>
   </div>
   <app-quote-create (add_quote)='create_quote($event)'></app-quote-create>
-  {{ quotes | json }}
-  <app-quote-list *ngFor='let quote of quotes' [this_quote]='quote'></app-quote-list>
+  <app-quote-list (upRank)='upRating(idx)' (downRank)='downRating(idx)' *ngFor='let quote of quotes; let idx = index' [this_quote]='quote'></app-quote-list>
 </div>

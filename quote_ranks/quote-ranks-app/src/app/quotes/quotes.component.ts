@@ -19,4 +19,11 @@ export class QuotesComponent implements OnInit {
     console.log('Emission heard');
     this.quotes.push(new_quote)
   }
+  upRating(idx) {
+    console.log("Click received from", idx);
+    this.quotes[idx].rating += 1
+  }
+  downRating(idx) {
+    this.quotes[idx].rating -= 1
+  }
 }
