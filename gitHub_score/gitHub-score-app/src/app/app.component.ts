@@ -16,14 +16,11 @@ export class AppComponent {
 
   calcScore() {
     console.log(this.username);
-    let currUser = this._gitHubService.getUser(this.username, (username) => {
-      this.username = username
-      this.score = this.username.public_repos + this.username.followers
+    this._gitHubService.getUser(this.username).subscribe((data) => {
+      this.currUser = data.json()
+      console.log(data.json());
+      this.score = this.currUser.public_repos + this.currUser.followers
     })
-    if (currUser) {
-      this.userFound = true
-    } else {
-      this.userFound = false
-    }
+    
   }   
 }
