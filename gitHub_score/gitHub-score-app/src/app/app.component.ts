@@ -8,7 +8,7 @@ import { GitHubService } from './git-hub.service'
 })
 export class AppComponent {
   username
-  userFound: boolean
+  userFound: boolean = true
   currUser
   score: number
 
