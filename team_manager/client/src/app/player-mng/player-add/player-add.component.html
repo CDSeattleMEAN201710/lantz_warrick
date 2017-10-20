@@ -1,3 +1,32 @@
-<p>
-  player-add works!
-</p>
+<div class="container">
+  <br>
+  <h1>Add player</h1>
+  <br>
+  <form (submit)="addPlayer()">
+      <div class="form-group">
+        <label class="col-form-label" for="player">Player name:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="player" 
+          name="player" 
+          placeholder="Enter player name"
+          [(ngModel)]="new_player.player"
+          #player='ngModel'
+        />
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="position">Preferred position:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="position" 
+          name="position" 
+          placeholder="Enter preferred position"
+          [(ngModel)]="new_player.position"
+          #position='ngModel'
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

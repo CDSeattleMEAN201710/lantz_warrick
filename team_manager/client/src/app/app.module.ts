@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,8 @@ import { PlayerAddComponent } from './player-mng/player-add/player-add.component
 import { Game1Component } from './game-mng/game1/game1.component';
 import { Game2Component } from './game-mng/game2/game2.component';
 import { Game3Component } from './game-mng/game3/game3.component';
+
+import { PlayerService } from './player-mng/player.service'
 
 @NgModule({
   declarations: [
@@ -24,9 +28,11 @@ import { Game3Component } from './game-mng/game3/game3.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
