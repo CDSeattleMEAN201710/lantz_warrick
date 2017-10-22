@@ -1,3 +1,13 @@
-<p>
-  game-mng works!
-</p>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" id="game1-tab" [routerLink]="['/game','game1']">Game 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" id="game2-tab" [routerLink]="['/game','game2']">Game 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" id="game3-tab" [routerLink]="['/game','game3']">Game 3</a>
+  </li>
+</ul>
+<br>
+<router-outlet></router-outlet>

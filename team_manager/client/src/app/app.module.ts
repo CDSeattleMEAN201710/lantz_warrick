@@ -13,7 +13,8 @@ import { Game1Component } from './game-mng/game1/game1.component';
 import { Game2Component } from './game-mng/game2/game2.component';
 import { Game3Component } from './game-mng/game3/game3.component';
 
-import { PlayerService } from './player-mng/player.service'
+import { PlayerService } from './player-mng/player.service';
+import { GameService } from './game-mng/game.service';
 
 @NgModule({
   declarations: [
@@ -24,15 +25,15 @@ import { PlayerService } from './player-mng/player.service'
     PlayerAddComponent,
     Game1Component,
     Game2Component,
-    Game3Component
+    Game3Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
-  providers: [PlayerService],
+  providers: [PlayerService, GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

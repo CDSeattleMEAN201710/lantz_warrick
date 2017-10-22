@@ -22,14 +22,16 @@ module.exports = {
                 res.status(500).json(err)
             })
     },
-    delPlayer: (req, res) => {
-        // let id = req.params.id
-        // console.log("id got to controller", id);
-        Player.findByIdAndRemove({ id: req.params._id })
-            .then(() => console.log('player deleted', req.params._id))
-            .catch(err => {
-                console.log('Player delete error', err)
-                res.status(500).json(err)
-            })
-    }
+    // delete: (req, res) => {
+    //     let id = req.params.id
+    //     console.log("id got to controller", id);
+    //     Player.remove({ id:req.params._id })
+    //         .then(() => {
+    //             res.json(true)
+    //         })
+    //         .catch(err => {
+    //             console.log('Player delete error', err)
+    //             res.status(500).json(err)
+    //         })
+    // }
 }

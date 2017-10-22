@@ -19,10 +19,10 @@ export class PlayerListComponent implements OnInit {
       .catch(err => console.log('get_all error on comp', err))
     
   }
-  delPlayer(_id) {
-console.log(_id);
-    this.player_service.del_one(_id)
-      .then(() => ())
-      .catch(err => console.log('delPlayer on comp', err))
-  }
+  // delPlayer(_id) {
+  // console.log(_id);
+  //   this.player_service.del_one(_id)
+  //     .then(() => console.log('player deleted at component?'))
+  //     .catch(err => console.log('delPlayer on comp', err))
+  // }
 }
