@@ -15,4 +15,10 @@ export class PlayerService {
   create(new_player: Player){
     return this.http.post("/addPlayer", new_player).map(data => data.json()).toPromise()
   }
+  get_all(){
+    return this.http.get('/get_all').map(data => data.json()).toPromise()
+  }
+  del_one(id){
+    return this.http.delete('/delPlayer/' + id).map(data => data.json()).toPromise()
+  }
 }

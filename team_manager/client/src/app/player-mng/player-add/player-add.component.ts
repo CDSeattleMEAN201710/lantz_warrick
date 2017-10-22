@@ -17,6 +17,7 @@ export class PlayerAddComponent implements OnInit {
     this.new_player = new Player
   }
   addPlayer() {
+    console.log('submit pressed');
     this.player_service.create(this.new_player)
       .then(() => console.log('player added?'))
       .catch(err => console.log('player create error', err))

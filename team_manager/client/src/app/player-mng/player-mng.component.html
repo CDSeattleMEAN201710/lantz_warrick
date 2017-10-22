@@ -1,9 +1,16 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" href="#">List</a>
+    <a class="nav-link active" id="list-tab" [routerLink]="['/player','list']" script="$('#list-tab').on('click', function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })">List</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]="['/player','add']">Add</a>
+    <a class="nav-link" id="add-tab"[routerLink]="['/player','add']" script="$('#add-tab').on('click', function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })">Add</a>
   </li>
 </ul>
+<br>
 <router-outlet></router-outlet>
