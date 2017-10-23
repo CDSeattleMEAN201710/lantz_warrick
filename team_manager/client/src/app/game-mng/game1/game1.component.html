@@ -10,9 +10,9 @@
   <tr *ngFor="let player of players; let idx=index">
       <td scope="row">{{player.player}}</td>
       <td>
-          <button class="btn btn-secondary btn-sm" >Playing</button>
-          <button class="btn btn-secondary btn-sm" >Not Playing</button>
-          <button class="btn btn-secondary btn-sm" >Undecided</button>
+          <button class="btn btn-secondary btn-sm" (click)="play(player._id)">Playing</button>
+          <button class="btn btn-secondary btn-sm" (click)="no_play(player._id)">Not Playing</button>
+          <button class="btn btn-secondary btn-sm" (click)="undec(player._id)">Undecided</button>
       </td>
   </tr>
   </tbody>

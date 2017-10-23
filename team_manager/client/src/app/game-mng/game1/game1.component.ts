@@ -19,5 +19,13 @@ export class Game1Component implements OnInit {
       .catch(err => console.log('get_all error on comp', err))
     
   }
-  
+  play(id) {
+    
+  }
+  no_play(id){
+
+  }
+  undec(id){
+    
+  }
 }
