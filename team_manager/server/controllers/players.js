@@ -34,5 +34,18 @@ module.exports = {
             }
         })
             
+    },
+    status: (req, res) => {
+        let id = req.body.id
+        let status = req.body.status
+        console.log('status got to controler', status)
+        Player.update({_id: id}, {game1: status}, function (err,player){
+            if(err){
+                console.log('Update status error in controller', err)
+            } else {
+                console.log('player status updated at controller')
+                res.json(true)
+            }
+        })
     }
 }

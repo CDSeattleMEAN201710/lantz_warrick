@@ -15,4 +15,7 @@ export class GameService {
   get_all(){
     return this.http.get('/get_all').map(data => data.json()).toPromise()
   }
+  set_status(id, status) {
+    return this.http.post('/set_status/', { id:id, status:status }).map(data => data.json()).toPromise()
+  }
 }

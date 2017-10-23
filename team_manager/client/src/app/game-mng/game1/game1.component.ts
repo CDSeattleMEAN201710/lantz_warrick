@@ -19,13 +19,14 @@ export class Game1Component implements OnInit {
       .catch(err => console.log('get_all error on comp', err))
     
   }
-  play(id) {
+  set_status(id, status) {
     
-  }
-  no_play(id){
-
-  }
-  undec(id){
-    
+    console.log('status got to comp', status);
+    this.game_service.set_status(id, status)
+      .then(() => 
+        this.game_service.get_all() 
+          .then(players => this.players = players)
+          .catch(err => console.log('get_all error on comp-setStatus', err)))
+      .catch(err => console.log('set_status error on comp', err))
   }
 }
